@@ -14,7 +14,7 @@ public class Sok_server {
     }
 
     public void run() throws Exception {
-        ServerSocket serverSocket = new ServerSocket(444);
+        ServerSocket serverSocket = new ServerSocket(3000);
         Socket socket = serverSocket.accept();
         InputStreamReader IR = new InputStreamReader(socket.getInputStream());
         BufferedReader BR = new BufferedReader(IR);

@@ -12,7 +12,7 @@ public class Sok_reveiver {
         sok_reveiver.run();
     }
     public void run() throws Exception {
-        Socket socket = new Socket("localhost",444);
+        Socket socket = new Socket("localhost",3000);
         PrintStream ps = new PrintStream(socket.getOutputStream());
         ps.println("Hello to Server, message from receiver");
 
