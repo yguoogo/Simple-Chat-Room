@@ -34,8 +34,9 @@ public class Server extends JFrame {
         );
         add(userText,BorderLayout.NORTH);
         chatWindow = new JTextArea();
-        add(new JScrollPane());
-        setSize(300,150);
+        add(new JScrollPane(chatWindow), BorderLayout.CENTER);
+        //add(new JScrollPane());
+        setSize(300,500);
         setVisible(true);
     }
 
@@ -118,12 +119,12 @@ public class Server extends JFrame {
     }
 
     // updates chatWindow
-    private void showMessage(final String text){
+    private void showMessage(final String m){
         SwingUtilities.invokeLater(
                 new Runnable() {
                     @Override
                     public void run() {
-                        chatWindow.append(text);
+                        chatWindow.append(m);
                     }
                 }
         );
