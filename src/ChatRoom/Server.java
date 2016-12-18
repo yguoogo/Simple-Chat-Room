@@ -9,7 +9,7 @@ import javax.swing.*;
 /**
  * Created by yuguanxu on 12/10/16.
  */
-public class Server extends JFrame {
+public class Server extends JFrame implements Runnable{
     private JTextField userText;
     private JTextArea chatWindow;
     private ObjectOutputStream output;
@@ -143,6 +143,8 @@ public class Server extends JFrame {
     }
 
 
+    @Override
+    public void run() {
 
-
+    }
 }
