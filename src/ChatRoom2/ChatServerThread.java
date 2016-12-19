@@ -22,9 +22,6 @@ public class ChatServerThread extends Thread
         ID     = socket.getPort();
     }
 
-
-
-
     public void send(String msg) {
         try {
             streamOut.writeObject(msg);
@@ -35,9 +32,6 @@ public class ChatServerThread extends Thread
             stop();
         }
     }
-
-
-
 
     public int getID()
     {  return ID;

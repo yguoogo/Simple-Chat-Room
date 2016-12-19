@@ -10,10 +10,10 @@ import java.awt.event.ActionListener;
 import java.net.*;
 import java.io.*;
 
-public class ChatClient extends JFrame implements Runnable
-{  private Socket socket              = null;
+public class ChatClient extends JFrame
+{
+    private Socket socket              = null;
     private Thread thread              = null;
-    private DataInputStream  console   = null;
     private ObjectOutputStream streamOut = null;
     private ChatClientThread client    = null;
     public String userName = "";
@@ -21,36 +21,21 @@ public class ChatClient extends JFrame implements Runnable
     private JTextField userText;
     private JTextArea chatWindow;
 
-    public ChatClient(String serverName, int serverPort, String name)
-    {
+    public ChatClient(String serverName, int serverPort, String name) {
         super("Chat Room " + (serverPort-3000) + "    " + name);
         userName = name;
         System.out.println("Establishing connection. Please wait ...");
-        try
-        {   socket = new Socket(serverName, serverPort);
+        try {
+            socket = new Socket(serverName, serverPort);
             System.out.println("Connected: " + socket);
             start();
             sendSystemMessage();
-        }
-        catch(UnknownHostException uhe)
-        {  System.out.println("Host unknown: " + uhe.getMessage()); }
-        catch(IOException ioe)
-        {  System.out.println("Unexpected exception: " + ioe.getMessage()); }
-    }
-
-
-    public void run()
-    {  while (true) {
-        try {
-            streamOut.writeObject(console.readLine());
-            streamOut.flush();
+        } catch(UnknownHostException uhe) {
+            System.out.println("Host unknown: " + uhe.getMessage());
         } catch(IOException ioe) {
-            System.out.println("Sending error: " + ioe.getMessage());
-            stop();
+            System.out.println("Unexpected exception: " + ioe.getMessage());
         }
     }
-    }
-
 
 
     public void handle(String msg) {
@@ -66,33 +51,28 @@ public class ChatClient extends JFrame implements Runnable
 
     public void start() throws IOException
     {
-        console   = new DataInputStream(System.in);
         streamOut = new ObjectOutputStream(socket.getOutputStream());
         setUpGUI();
         ableToType(true);
         if (thread == null)
         {
             client = new ChatClientThread(this, socket);
-            //thread = new Thread(this);
-            //thread.start();
         }
     }
     public void stop()
     {
-
-
         if (thread != null) {
             thread.stop();
             thread = null;
-        }try {
-        if (console   != null)  console.close();
-        if (streamOut != null)  streamOut.close();
-        if (socket    != null)  socket.close();
-    } catch(IOException ioe) {
-        System.out.println("Error closing ...");
-    }
+        }
 
-
+        try {
+            sendMessage(".bye");
+            if (streamOut != null)  streamOut.close();
+            if (socket    != null)  socket.close();
+        } catch(IOException ioe) {
+            System.out.println("Error closing ...");
+        }
         client.close();
         client.stop();
     }
