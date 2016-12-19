@@ -3,13 +3,15 @@ import java.net.*;
 import java.io.*;
 
 public class ChatServer implements Runnable
-{  private ChatServerThread clients[] = new ChatServerThread[50];
+{
+    private ChatServerThread clients[] = new ChatServerThread[50];
     private ServerSocket server = null;
     private Thread       thread = null;
     private int clientCount = 0;
 
     public ChatServer(int port)
-    {  try {
+    {
+        try {
             System.out.println("Binding to port " + port + ", please wait  ...");
             server = new ServerSocket(port);
             System.out.println("Server started: " + server);
@@ -65,7 +67,8 @@ public class ChatServer implements Runnable
             remove(ID);
         } else {
             for (int i = 0; i < clientCount; i++)
-                clients[i].send(ID + ": " + input);
+                //clients[i].send(ID + ": " + input);
+                clients[i].send(input);
         }
 
     }
@@ -112,6 +115,11 @@ public class ChatServer implements Runnable
     public static void main(String args[]) {
         ChatServer server = null;
         server = new ChatServer(3000);
+        server = new ChatServer(3001);
+        server = new ChatServer(3002);
+        server = new ChatServer(3003);
+        server = new ChatServer(3004);
+        server = new ChatServer(3005);
     }
 
 }

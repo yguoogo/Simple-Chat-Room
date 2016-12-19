@@ -23,13 +23,14 @@ public class ChatClient extends JFrame implements Runnable
 
     public ChatClient(String serverName, int serverPort, String name)
     {
-        super("Client mofo!");
+        super("Chat Room " + (serverPort-3000) + "    " + name);
         userName = name;
         System.out.println("Establishing connection. Please wait ...");
         try
         {   socket = new Socket(serverName, serverPort);
             System.out.println("Connected: " + socket);
             start();
+            sendSystemMessage();
         }
         catch(UnknownHostException uhe)
         {  System.out.println("Host unknown: " + uhe.getMessage()); }
@@ -46,8 +47,8 @@ public class ChatClient extends JFrame implements Runnable
         } catch(IOException ioe) {
             System.out.println("Sending error: " + ioe.getMessage());
             stop();
-            }
         }
+    }
     }
 
 
@@ -56,7 +57,7 @@ public class ChatClient extends JFrame implements Runnable
         if (msg.equals(".bye")) {
             System.out.println("Good bye. Press RETURN to exit ...");
             stop();
-    } else {
+        } else {
             showMessage(msg);
         }
     }
@@ -83,12 +84,12 @@ public class ChatClient extends JFrame implements Runnable
             thread.stop();
             thread = null;
         }try {
-            if (console   != null)  console.close();
-            if (streamOut != null)  streamOut.close();
-            if (socket    != null)  socket.close();
-        } catch(IOException ioe) {
-            System.out.println("Error closing ...");
-        }
+        if (console   != null)  console.close();
+        if (streamOut != null)  streamOut.close();
+        if (socket    != null)  socket.close();
+    } catch(IOException ioe) {
+        System.out.println("Error closing ...");
+    }
 
 
         client.close();
@@ -118,9 +119,9 @@ public class ChatClient extends JFrame implements Runnable
 
     private void sendMessage(final String message){
         try {
-            streamOut.writeUTF(message);
             streamOut.flush();
-            String display_message = "\n"+userName + " - " + message;
+            String display_message = userName + " - " + message + "\n";
+            streamOut.writeUTF(display_message);
         } catch(IOException ioe) {
             System.out.println("Sending error: " + ioe.getMessage());
             stop();
@@ -134,7 +135,7 @@ public class ChatClient extends JFrame implements Runnable
                     @Override
                     public void run() {
 
-                        chatWindow.append("\n"+ userName + " - "+message);
+                        chatWindow.append(message);
                     }
                 }
         );
@@ -151,10 +152,15 @@ public class ChatClient extends JFrame implements Runnable
         );
     }
 
-    public static void main(String args[])
-    {  ChatClient client = null;
-        client = new ChatClient("127.0.0.1",3000, "user1");
+    private void sendSystemMessage(){
+        try {
+            streamOut.flush();
+            String display_message = "System - Welcome " + userName + "!!! \n";
+            streamOut.writeUTF(display_message);
+        } catch(IOException ioe) {
+            System.out.println("Sending error: " + ioe.getMessage());
+            stop();
+        }
     }
-
 
 }
