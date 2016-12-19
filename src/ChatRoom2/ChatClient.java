@@ -14,7 +14,7 @@ public class ChatClient extends JFrame implements Runnable
 {  private Socket socket              = null;
     private Thread thread              = null;
     private DataInputStream  console   = null;
-    private DataOutputStream streamOut = null;
+    private ObjectOutputStream streamOut = null;
     private ChatClientThread client    = null;
     public String userName = "";
 
@@ -42,7 +42,7 @@ public class ChatClient extends JFrame implements Runnable
     public void run()
     {  while (true) {
         try {
-            streamOut.writeUTF(console.readLine());
+            streamOut.writeObject(console.readLine());
             streamOut.flush();
         } catch(IOException ioe) {
             System.out.println("Sending error: " + ioe.getMessage());
@@ -65,8 +65,9 @@ public class ChatClient extends JFrame implements Runnable
 
 
     public void start() throws IOException
-    {  console   = new DataInputStream(System.in);
-        streamOut = new DataOutputStream(socket.getOutputStream());
+    {
+        console   = new DataInputStream(System.in);
+        streamOut = new ObjectOutputStream(socket.getOutputStream());
         setUpGUI();
         ableToType(true);
         if (thread == null)
@@ -119,9 +120,9 @@ public class ChatClient extends JFrame implements Runnable
 
     private void sendMessage(final String message){
         try {
-            streamOut.flush();
             String display_message = userName + " - " + message + "\n";
-            streamOut.writeUTF(display_message);
+            streamOut.writeObject(display_message);
+            streamOut.flush();
         } catch(IOException ioe) {
             System.out.println("Sending error: " + ioe.getMessage());
             stop();
@@ -154,9 +155,9 @@ public class ChatClient extends JFrame implements Runnable
 
     private void sendSystemMessage(){
         try {
-            streamOut.flush();
             String display_message = "System - Welcome " + userName + "!!! \n";
-            streamOut.writeUTF(display_message);
+            streamOut.writeObject(display_message);
+            streamOut.flush();
         } catch(IOException ioe) {
             System.out.println("Sending error: " + ioe.getMessage());
             stop();

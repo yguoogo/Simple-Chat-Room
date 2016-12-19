@@ -8,12 +8,14 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
 /**
  * Created by yuguanxu on 12/18/16.
  */
+
 public class ChatRoom extends JFrame {
 
     private String serverName = "";
@@ -70,6 +72,24 @@ public class ChatRoom extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(300,300);
         setVisible(true);
+    }
+
+    private boolean checkPortAvaliable(int _port){
+
+        boolean portTaken = false;
+        ServerSocket socket = null;
+        try {
+            socket = new ServerSocket(_port);
+        } catch (IOException e) {
+            portTaken = true;
+        } finally {
+            if (socket != null)
+                try {
+                    socket.close();
+                } catch (IOException e) { e.printStackTrace(); }
+        }
+
+        return portTaken;
     }
 
     private class ChatRoomHandler implements ActionListener {

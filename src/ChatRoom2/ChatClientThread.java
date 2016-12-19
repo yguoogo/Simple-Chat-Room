@@ -10,7 +10,7 @@ public class ChatClientThread extends Thread
 {
     private Socket           socket   = null;
     private ChatClient       client   = null;
-    private DataInputStream  streamIn = null;
+    private ObjectInputStream  streamIn = null;
 
     public ChatClientThread(ChatClient _client, Socket _socket)
     {
@@ -22,7 +22,7 @@ public class ChatClientThread extends Thread
 
     public void open() {
         try {
-            streamIn  = new DataInputStream(socket.getInputStream());
+            streamIn  = new ObjectInputStream(socket.getInputStream());
         } catch(IOException ioe) {
             System.out.println("Error getting input stream: " + ioe);
             client.stop();
@@ -46,10 +46,12 @@ public class ChatClientThread extends Thread
     public void run() {
         while (true) {
             try {
-                client.handle(streamIn.readUTF());
+                client.handle(streamIn.readObject().toString());
             } catch(IOException ioe) {
                 System.out.println("Listening error: " + ioe.getMessage());
                 client.stop();
+            }catch (ClassNotFoundException classNotFoundException){
+                System.out.println("Class not found from received data");
             }
         }
     }

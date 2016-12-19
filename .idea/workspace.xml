@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66cc638b-4828-4f10-8643-deb168386853" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ChatRoom2/MainServer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ChatRoom2/Signal.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Test/Signal.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Test/TeseEnmu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatClient$1.class" afterPath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatClient$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatClient$2.class" afterPath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatClient$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatClient$3.class" afterPath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatClient$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatClient.class" afterPath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatClientThread.class" afterPath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatClientThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatServer.class" afterPath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatServerThread.class" afterPath="$PROJECT_DIR$/out/production/SocketProgramming/ChatRoom2/ChatServerThread.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChatRoom/Server.java" afterPath="$PROJECT_DIR$/src/ChatRoom/Server.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChatRoom2/ChatClient.java" afterPath="$PROJECT_DIR$/src/ChatRoom2/ChatClient.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChatRoom2/ChatClientThread.java" afterPath="$PROJECT_DIR$/src/ChatRoom2/ChatClientThread.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChatRoom2/ChatServer.java" afterPath="$PROJECT_DIR$/src/ChatRoom2/ChatServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChatRoom2/ChatRoom.java" afterPath="$PROJECT_DIR$/src/ChatRoom2/ChatRoom.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChatRoom2/ChatServerThread.java" afterPath="$PROJECT_DIR$/src/ChatRoom2/ChatServerThread.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -44,8 +33,8 @@
       <file leaf-file-name="ChatServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="599">
-              <caret line="121" column="36" lean-forward="false" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
+            <state relative-caret-position="-1451">
+              <caret line="1" column="1" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,15 +42,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChatClient.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatClient.java">
+      <file leaf-file-name="ChatServerThread.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatServerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2131">
-              <caret line="151" column="10" lean-forward="true" selection-start-line="151" selection-start-column="10" selection-end-line="151" selection-end-column="10" />
+            <state relative-caret-position="150">
+              <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4083#4084#0" expanded="true" />
-                <element signature="e#4156#4157#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ChatClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2250">
+              <caret line="150" column="21" lean-forward="true" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4100#4101#0" expanded="true" />
+                <element signature="e#4173#4174#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,8 +71,8 @@
       <file leaf-file-name="ChatClientThread.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatClientThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="57" column="1" lean-forward="false" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+            <state relative-caret-position="150">
+              <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -82,13 +83,14 @@
       <file leaf-file-name="ChatRoom.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatRoom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+            <state relative-caret-position="1545">
+              <caret line="103" column="36" lean-forward="true" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="36" />
               <folding>
-                <element signature="e#1106#1261#0" expanded="true" />
-                <element signature="e#1260#1261#0" expanded="true" />
-                <element signature="e#2965#2966#0" expanded="true" />
-                <element signature="e#3035#3036#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1137#1292#0" expanded="true" />
+                <element signature="e#1291#1292#0" expanded="true" />
+                <element signature="e#3462#3463#0" expanded="true" />
+                <element signature="e#3532#3533#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,24 +108,16 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hand</find>
-      <find>input</find>
-      <find>flu</find>
-      <find>s</find>
       <find>stream</find>
-      <find>streamin</find>
-      <find>sendmessage</find>
       <find>getmessage</find>
       <find>tmp</find>
       <find>sendME</find>
       <find>mark</find>
       <find>message</find>
-      <find>streamout</find>
       <find>addthread</find>
       <find>accept</find>
       <find>senden</find>
       <find>this</find>
-      <find>handle</find>
       <find>enter</find>
       <find>roomlist</find>
       <find>setv</find>
@@ -132,10 +126,18 @@
       <find>setupchat</find>
       <find>runnable</find>
       <find>run</find>
-      <find>start</find>
       <find>abletotype</find>
-      <find>send</find>
+      <find>start</find>
+      <find>sendmessage</find>
       <find>show</find>
+      <find>stop</find>
+      <find>send</find>
+      <find>socket</find>
+      <find>handle</find>
+      <find>input</find>
+      <find>streamin</find>
+      <find>streamout</find>
+      <find>output</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -154,7 +156,6 @@
         <option value="$PROJECT_DIR$/src/ChatRoom/ClientTest.java" />
         <option value="$PROJECT_DIR$/src/ChatRoom/ServerTest.java" />
         <option value="$PROJECT_DIR$/src/Thread/Thread1.java" />
-        <option value="$PROJECT_DIR$/src/ChatRoom/Server.java" />
         <option value="$PROJECT_DIR$/src/ChatRoom/Client.java" />
         <option value="$PROJECT_DIR$/src/Test/Signal.java" />
         <option value="$PROJECT_DIR$/src/ChatRoom2/Signal.java" />
@@ -162,11 +163,12 @@
         <option value="$PROJECT_DIR$/src/Test/TeseEnmu.java" />
         <option value="$PROJECT_DIR$/src/ChatRoom2/MainServer.java" />
         <option value="$PROJECT_DIR$/src/Test/tuna.java" />
-        <option value="$PROJECT_DIR$/src/ChatRoom2/ChatServerThread.java" />
-        <option value="$PROJECT_DIR$/src/ChatRoom2/ChatClientThread.java" />
         <option value="$PROJECT_DIR$/src/ChatRoom2/ChatServer.java" />
         <option value="$PROJECT_DIR$/src/ChatRoom2/ChatRoom.java" />
         <option value="$PROJECT_DIR$/src/ChatRoom2/ChatClient.java" />
+        <option value="$PROJECT_DIR$/src/ChatRoom/Server.java" />
+        <option value="$PROJECT_DIR$/src/ChatRoom2/ChatClientThread.java" />
+        <option value="$PROJECT_DIR$/src/ChatRoom2/ChatServerThread.java" />
       </list>
     </option>
   </component>
@@ -212,60 +214,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SocketProgramming" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SocketProgramming" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SocketProgramming" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SocketProgramming" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChatRoom2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SocketProgramming" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SocketProgramming" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ChatRoom" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -621,7 +569,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -638,7 +586,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.190625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.190625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -939,24 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatServerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="71" column="1" lean-forward="false" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ChatRoom/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="52" column="49" lean-forward="false" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Test/TeseEnmu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -989,8 +919,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="599">
-          <caret line="121" column="36" lean-forward="false" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
+        <state relative-caret-position="-1451">
+          <caret line="1" column="1" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -999,21 +929,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatRoom.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        <state relative-caret-position="1545">
+          <caret line="103" column="36" lean-forward="true" selection-start-line="103" selection-start-column="36" selection-end-line="103" selection-end-column="36" />
           <folding>
-            <element signature="e#1106#1261#0" expanded="true" />
-            <element signature="e#1260#1261#0" expanded="true" />
-            <element signature="e#2965#2966#0" expanded="true" />
-            <element signature="e#3035#3036#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1137#1292#0" expanded="true" />
+            <element signature="e#1291#1292#0" expanded="true" />
+            <element signature="e#3462#3463#0" expanded="true" />
+            <element signature="e#3532#3533#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChatRoom/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-86">
+          <caret line="112" column="18" lean-forward="false" selection-start-line="112" selection-start-column="12" selection-end-line="112" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatClientThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="1" lean-forward="false" selection-start-line="57" selection-start-column="1" selection-end-line="57" selection-end-column="1" />
+        <state relative-caret-position="150">
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1022,12 +961,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2131">
-          <caret line="151" column="10" lean-forward="true" selection-start-line="151" selection-start-column="10" selection-end-line="151" selection-end-column="10" />
+        <state relative-caret-position="2250">
+          <caret line="150" column="21" lean-forward="true" selection-start-line="150" selection-start-column="21" selection-end-line="150" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4083#4084#0" expanded="true" />
-            <element signature="e#4156#4157#0" expanded="true" />
+            <element signature="e#4100#4101#0" expanded="true" />
+            <element signature="e#4173#4174#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ChatRoom2/ChatServerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="4" lean-forward="false" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

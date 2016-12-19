@@ -7,12 +7,12 @@ import java.net.*;
 import java.io.*;
 
 public class ChatServerThread extends Thread
-{  private ChatServer       server    = null;
+{
+    private ChatServer       server    = null;
     private Socket           socket    = null;
     private int              ID        = -1;
-    private DataInputStream  streamIn  =  null;
-    private DataOutputStream streamOut = null;
-
+    private ObjectInputStream  streamIn  =  null;
+    private ObjectOutputStream streamOut = null;
 
 
     public ChatServerThread(ChatServer _server, Socket _socket) {
@@ -25,16 +25,15 @@ public class ChatServerThread extends Thread
 
 
 
-    public void send(String msg)
-    {   try
-    {  streamOut.writeUTF(msg);
-        streamOut.flush();
-    }
-    catch(IOException ioe)
-    {  System.out.println(ID + " ERROR sending: " + ioe.getMessage());
-        server.remove(ID);
-        stop();
-    }
+    public void send(String msg) {
+        try {
+            streamOut.writeObject(msg);
+            streamOut.flush();
+        } catch(IOException ioe) {
+            System.out.println(ID + " ERROR sending: " + ioe.getMessage());
+            server.remove(ID);
+            stop();
+        }
     }
 
 
@@ -46,23 +45,24 @@ public class ChatServerThread extends Thread
 
 
     public void run()
-    {  System.out.println("Server Thread " + ID + " running.");
-        while (true)
-        {  try
-        {  server.handle(ID, streamIn.readUTF());
-        }
-        catch(IOException ioe)
-        {  System.out.println(ID + " ERROR reading: " + ioe.getMessage());
-            server.remove(ID);
-            stop();
-        }
+    {
+        System.out.println("Server Thread " + ID + " running.");
+        while (true) {
+            try {
+                server.handle(ID, streamIn.readObject().toString());
+            } catch(IOException ioe) {
+                System.out.println(ID + " ERROR reading: " + ioe.getMessage());
+                server.remove(ID);
+                stop();
+            } catch (ClassNotFoundException classNotFoundException){
+                System.out.println("Class not found from received data");
+            }
         }
     }
     public void open() throws IOException
-    {  streamIn = new DataInputStream(new
-            BufferedInputStream(socket.getInputStream()));
-        streamOut = new DataOutputStream(new
-                BufferedOutputStream(socket.getOutputStream()));
+    {
+        streamIn = new ObjectInputStream(socket.getInputStream());
+        streamOut = new ObjectOutputStream(socket.getOutputStream());
     }
     public void close() throws IOException
     {  if (socket != null)    socket.close();
